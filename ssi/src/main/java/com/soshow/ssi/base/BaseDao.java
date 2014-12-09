@@ -67,6 +67,13 @@ public interface BaseDao<T> {
 	public abstract int delete(Map<String, Object> param);
 
 	/**
+	 * 得到数据对象集合
+	 * 
+	 * @return
+	 */
+	public abstract List<T> list();
+	
+	/**
 	 * @Description:得到数据对象列表
 	 * @param param
 	 *            map参数

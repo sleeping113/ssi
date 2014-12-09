@@ -59,9 +59,14 @@ public class BaseDaoImpl<T> implements BaseDao<T> {
 		return 0;
 	}
 
+	@SuppressWarnings("unchecked")
+	public List<T> list() {
+		return this.sqlMapClientTemplate.queryForList("get" + poClassName);
+	}
+	
+	@SuppressWarnings("unchecked")
 	public List<T> list(Map<String, Object> param) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.sqlMapClientTemplate.queryForList("get" + poClassName, param);
 	}
 
 	public int deleteBatch(String ids) {
